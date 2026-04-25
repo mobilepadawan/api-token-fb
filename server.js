@@ -17,6 +17,7 @@ app.get('/', async (req, res) => {
              res.status(200).json({
                  message: "Bienvenid@s a nuestra API Backend de TECLAB.",
                  name: "Ejemplo con API KEY - Teclab " + new Date().getFullYear(),
+                 copyright: "Fernando Omar Luna",
                  version: "1.0.2026"
              })
          }
