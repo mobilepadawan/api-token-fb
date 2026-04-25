@@ -1,0 +1,22 @@
+{
+  "name": "api-token",
+  "version": "1.0.0",
+  "description": "Ejemplo funcional de API KEY y tokens",
+  "main": "server.js",
+  "scripts": {
+    "test": "node --watch --env-file=.env server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "Express",
+    "Node.js",
+    "Token"
+  ],
+  "author": "Fernando Luna for TECLAB INSTITUTE",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.18.2",
+    "firebase": "^12.12.1"
+  }
+}

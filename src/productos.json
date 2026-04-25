@@ -1,0 +1,290 @@
+[
+    {
+        "imagen": "🍌",
+        "nombre": "Bananas",
+        "precio": 1800,
+        "categoria": "Fruta"
+    },
+    {
+        "imagen": "🍎",
+        "nombre": "Manzana roja",
+        "precio": 2200,
+        "categoria": "Fruta"
+    },
+    {
+        "imagen": "🥝",
+        "nombre": "Kiwis",
+        "precio": 3500,
+        "categoria": "Fruta"
+    },
+    {
+        "imagen": "🍈",
+        "nombre": "Melón",
+        "precio": 1800,
+        "categoria": "Fruta"
+    },
+    {
+        "imagen": "🍍",
+        "nombre": "Ananá",
+        "precio": 2500,
+        "categoria": "Fruta"
+    },
+    {
+        "imagen": "🍅",
+        "nombre": "Tomates",
+        "precio": 2000,
+        "categoria": "Fruta"
+    },
+    {
+        "imagen": "🍏",
+        "nombre": "Manzana verde",
+        "precio": 2200,
+        "categoria": "Fruta"
+    },
+    {
+        "imagen": "🍉",
+        "nombre": "Pomelo Rosado",
+        "precio": 1400,
+        "categoria": "Fruta"
+    },
+    {
+        "imagen": "🍑",
+        "nombre": "Duraznos",
+        "precio": 2800,
+        "categoria": "Fruta"
+    },
+    {
+        "imagen": "🫐",
+        "nombre": "Arándanos",
+        "precio": 6000,
+        "categoria": "Fruta"
+    },
+    {
+        "imagen": "🥭",
+        "nombre": "Mango",
+        "precio": 2500,
+        "categoria": "Fruta"
+    },
+    {
+        "imagen": "🍇",
+        "nombre": "Uvas",
+        "precio": 2600,
+        "categoria": "Fruta"
+    },
+    {
+        "imagen": "🍐",
+        "nombre": "Peras",
+        "precio": 1800,
+        "categoria": "Fruta"
+    },
+    {
+        "imagen": "🍒",
+        "nombre": "Cerezas",
+        "precio": 7000,
+        "categoria": "Fruta"
+    },
+    {
+        "imagen": "🍓",
+        "nombre": "Frutillas",
+        "precio": 3000,
+        "categoria": "Fruta"
+    },
+    {
+        "imagen": "🍋",
+        "nombre": "Limones",
+        "precio": 1200,
+        "categoria": "Fruta"
+    },
+    {
+        "imagen": "🍋‍🟩",
+        "nombre": "Lima",
+        "precio": 3000,
+        "categoria": "Fruta"
+    },
+    {
+        "imagen": "🍉",
+        "nombre": "Sandía",
+        "precio": 1200,
+        "categoria": "Fruta"
+    },
+    {
+        "imagen": "🥑",
+        "nombre": "Palta",
+        "precio": 4000,
+        "categoria": "Fruta"
+    },
+    {
+        "imagen": "🌽",
+        "nombre": "Maíz",
+        "precio": 600,
+        "categoria": "Verdura"
+    },
+    {
+        "imagen": "🥒",
+        "nombre": "Pepino",
+        "precio": 1200,
+        "categoria": "Verdura"
+    },
+    {
+        "imagen": "🌶️",
+        "nombre": "Pimiento",
+        "precio": 3000,
+        "categoria": "Verdura"
+    },
+    {
+        "imagen": "🥬",
+        "nombre": "Lechuga",
+        "precio": 900,
+        "categoria": "Verdura"
+    },
+    {
+        "imagen": "🫑",
+        "nombre": "Morrón verde",
+        "precio": 2800,
+        "categoria": "Verdura"
+    },
+    {
+        "imagen": "🧅",
+        "nombre": "Cebolla",
+        "precio": 900,
+        "categoria": "Verdura"
+    },
+    {
+        "imagen": "🧄",
+        "nombre": "Ajo",
+        "precio": 2500,
+        "categoria": "Verdura"
+    },
+    {
+        "imagen": "🥔",
+        "nombre": "Papa",
+        "precio": 800,
+        "categoria": "Verdura"
+    },
+    {
+        "imagen": "🫒",
+        "nombre": "Aceitunas",
+        "precio": 4000,
+        "categoria": "Verdura"
+    },
+    {
+        "imagen": "🍞",
+        "nombre": "Pan",
+        "precio": 1800,
+        "categoria": "Comida"
+    },
+    {
+        "imagen": "🥫",
+        "nombre": "Sopa enlatada",
+        "precio": 1500,
+        "categoria": "Comida"
+    },
+    {
+        "imagen": "🍝",
+        "nombre": "Pasta",
+        "precio": 1200,
+        "categoria": "Comida"
+    },
+    {
+        "imagen": "🧀",
+        "nombre": "Queso",
+        "precio": 6000,
+        "categoria": "Comida"
+    },
+    {
+        "imagen": "🍪",
+        "nombre": "Galletas",
+        "precio": 1200,
+        "categoria": "Comida"
+    },
+    {
+        "imagen": "🥤",
+        "nombre": "Refresco",
+        "precio": 1500,
+        "categoria": "Bebida"
+    },
+    {
+        "imagen": "🍺",
+        "nombre": "Cerveza",
+        "precio": 1800,
+        "categoria": "Bebida"
+    },
+    {
+        "imagen": "🍷",
+        "nombre": "Vino",
+        "precio": 4000,
+        "categoria": "Bebida"
+    },
+    {
+        "imagen": "🧃",
+        "nombre": "Jugo",
+        "precio": 1200,
+        "categoria": "Bebida"
+    },
+    {
+        "imagen": "☕",
+        "nombre": "Café Espresso",
+        "precio": 2500,
+        "categoria": "Bebida"
+    },
+    {
+        "imagen": "🐟",
+        "nombre": "Pescado",
+        "precio": 6000,
+        "categoria": "Comida"
+    },
+    {
+        "imagen": "🍖",
+        "nombre": "Carne",
+        "precio": 9000,
+        "categoria": "Comida"
+    },
+    {
+        "imagen": "🍚",
+        "nombre": "Arroz",
+        "precio": 1300,
+        "categoria": "Comida"
+    },
+    {
+        "imagen": "🥚",
+        "nombre": "Huevos",
+        "precio": 3000,
+        "categoria": "Comida"
+    },
+    {
+        "imagen": "🍾",
+        "nombre": "Espumante",
+        "precio": 5000,
+        "categoria": "Bebida"
+    },
+    {
+        "imagen": "🥦",
+        "nombre": "Brócoli",
+        "precio": 1800,
+        "categoria": "Verdura"
+    },
+    {
+        "imagen": "🍹",
+        "nombre": "Licores",
+        "precio": 12000,
+        "categoria": "Bebida"
+    },
+    {
+        "imagen": "💧",
+        "nombre": "Agua purificada",
+        "precio": 1000,
+        "categoria": "Bebida"
+    },
+    {
+        "imagen": "🥃",
+        "nombre": "Whisky añejo",
+        "precio": 25000,
+        "categoria": "Bebida"
+    },
+    {
+        "imagen": "🍊",
+        "nombre": "Naranja",
+        "precio": 1500,
+        "categoria": "Fruta"
+    }
+]
