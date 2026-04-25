@@ -13,12 +13,17 @@ const userList = []
 app.use(json())
 
 app.get('/', async (req, res) => {
-    console.table(await AuthManager.readDB())
-    res.status(200).json({
-        message: "Bienvenid@s a nuestra API Backend de TECLAB.",
-        name: "Ejemplo con API KEY - Teclab " + new Date().getFullYear(),
-        version: "1.0.2026"
-    })
+         try {
+             res.status(200).json({
+                 message: "Bienvenid@s a nuestra API Backend de TECLAB.",
+                 name: "Ejemplo con API KEY - Teclab " + new Date().getFullYear(),
+                 version: "1.0.2026"
+             })
+         }
+         catch (error) {
+             res.status(400).json( { message: "Error al acceder al endpoint.", errorMessage: error.message } )                  
+         }
+         
 })
 
 app.post("/list-all-users", async (req, res) => {
