@@ -221,9 +221,9 @@ __Respuesta__
 # Manejo de errores
 
 La API utiliza códigos HTTP estándar:
-|-|-|
+
 |Código|Descripción|
-|-|-|
+|---|---|
 |200|OK|
 |201|Creado correctamente|
 |400|Error en la solicitud|
