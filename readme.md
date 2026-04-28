@@ -224,12 +224,12 @@ La API utiliza códigos HTTP estándar:
 
 |Código|Descripción|
 |---|---|
-|200|OK ✅|
-|201|Creado correctamente ✅|
-|400|Error en la solicitud ⛔️|
-|401|No autorizado ⚠️|
-|404|No encontrado ⚠️|
-|500|Error del servidor ⛔️|
+|200|✅ OK|
+|201|✅ Creado correctamente|
+|400|⛔️ Error en la solicitud|
+|401|⚠️ No autorizado|
+|404|⚠️ No encontrado|
+|500|⛔️ Error del servidor|
 
 
 
