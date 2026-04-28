@@ -1,93 +1,254 @@
-# Proyecto Backend con integración de API KEY
+# API REST - Backend TECLAB
 
-Este proyecto sirve de ejemplo para mostrar la integración de peticiones a `endpoints` que requieren la gestión de una `API KEY`, o `TOKEN`.
+Les damos la documentación de la API REST de TECLAB.
+Esta API permite gestionar usuarios, productos y categorías utilizando autenticación basada en tokens.
 
-## Cómo ejecutarlo
+## Autenticación
 
-1. Tener instalado NODE JS.
-2. Abrir el proyecto con VS CODE, arrastrando la carpeta de éste al IDE.
-3. Una vez abierto el proyecto, desde una ventana `Terminal` ejecutar el comando:
+La API utiliza dos tipos de tokens:
+
+* __admintoken__ → Para endpoints administrativos
+* __usertoken__ → Para operaciones de usuario
+
+Debes enviar el token en los headers de cada request:
+
+__Headers:__
+* usertoken: `TU_TOKEN`
+* admintoken: `TU_TOKEN_ADMIN`
+* Endpoint Base `GET /`
+
+Obtiene información general de la API.
+
+✅ Respuesta exitosa
+
 ```bash
-/> npm install
-```
-Si trabajas en `Linux` o `MacOS`, antepone el comando `sudo`, e ingresa tu contraseña cuando te la solicite.
-
-```bash
-/> sudo npm install
-```
-
-4. Finalizada la instalación de las herramientas anteriores, limpia la ventana `Terminal` con el comando `clear` en Linux o MacOS, o el comando `cls` desde Windows.
-
-5. Ejecuta el proyecto mediante:
-```bash
-/> npm run prod
-```
-
-## Ingresar a los endpoints:
-
-El endpoint principal de la aplicación es:
-```
-GET http://localhost:3008/
-```
-
-El endpoint para gestionar tokens mediante la asignación por usuarios, es:
-
-```
-POST http://localhost:3008/register
-```
-
-En el cuerpo de la petición, envia:
-
-```json
 {
-    "username": "Nombre o Nickname."
+  "message": "Bienvenid@s a nuestra API Backend de TECLAB.",
+  "APIName": "Ejemplo con API KEY - Teclab 2026",
+  "copyright": "Fernando Omar Luna",
+  "version": "1.0.2026"
 }
 ```
 
-Te dará una respuesta similar a la siguiente:
-```json
+## Usuarios
+
+🔹 Registrar usuario
+
+```bash 
+POST /register
+```
+
+Crea un nuevo usuario y genera un token.
+
+__Body__
+```bash
 {
-    "message": "Token asignado al usuario: {USUARIO} - token: 232ac59dd7274fe3bf6b898d0fff215c."
+  "email": "usuario@email.com",
+  "nickname": "usuario123"
+}
+````
+
+__Respuesta__
+
+```bash
+{
+  "id": "abc123",
+  "email": "usuario@email.com",
+  "nickname": "usuario123",
+  "tokenId": "TOKEN_GENERADO"
 }
 ```
 
-Copia el código alfanumérico correspondiente al token que te dió la aplicación, para usarlo en las otras peticiones. **No reinicies la aplicación. Si lo haces, deberás generar un token nuevamente.**
+🔹 Listar todos los usuarios (Admin)
 
-### Endpoint /productos
-El endpoint de productos de la aplicación es:
-```
-GET http://localhost:3008/productos 
+```bash 
+POST /list-all-users
 ```
 
-**Authorization**
+__Headers__
 
-```
-    Auth Type: API Key
-    Key:       token
-    Value:     `código alfanumérico del token generado`
-    Add to:    Header
-```
+__admintoken__: `TOKEN_ADMIN`
 
-Si valida el token correctamente, verás el  listado de productos, sino, dará un error del tipo `403
-Forbidden`.
+__Respuesta__
 
-
-### Endpoint /productos/categorias/:cat
-
-```
-GET http://localhost:3008/productos/categorias/:cat
+```bash
+[
+  {
+    "id": "abc123",
+    "email": "usuario@email.com",
+    "nickname": "usuario123"
+  }
+]
 ```
 
-En este endpoint, podrás obtener un listado de productos, filtrando por una categoría específica, mediante el uso de `URL PARAMS`.
+## Productos
+🔹 Obtener todos los productos
 
-Debes enviar también la información de API Key correspondiente, para poder acceder a los datos.
-
-### Endpoint /categorias
-
-```
-GET http://localhost:3008/categorias
+```bash 
+GET /productos
 ```
 
-Este endpoint te retorna un listado de todas las categorías unívocas relacionadas a los productos de ecommerce.
 
-Debes enviar también la información de API Key correspondiente, para poder acceder a los datos.
+__Headers__
+
+__usertoken__: `TOKEN_USUARIO`
+
+__Respuesta__
+```bash
+[
+  {
+    "id": "prod1",
+    "nombre": "Producto 1",
+    "precio": 100,
+    "categoria": "Tecnologia",
+    "imagen": "url_imagen"
+  }
+]
+````
+
+🔹 Obtener producto por ID
+
+```bash 
+GET /productos/:id
+```
+
+__ Headers__
+
+__usertoken__: `TOKEN_USUARIO`
+
+__Parámetros__
+
+`id: ID del producto`
+
+__Respuesta__
+
+```bash
+{
+  "id": "prod1",
+  "nombre": "Producto 1",
+  "precio": 100,
+  "categoria": "Tecnologia",
+  "imagen": "url_imagen"
+}
+````
+
+🔹 Crear producto
+
+```bash 
+POST /productos
+```
+
+__Headers__
+
+__usertoken__: `TOKEN_USUARIO`
+
+__Body__
+
+```bash
+{
+  "nombre": "Nuevo Producto",
+  "precio": 200,
+  "imagen": "url_imagen",
+  "categoria": "Tecnologia"
+}
+````
+
+__Respuesta__
+
+```bash
+{
+  "id": "nuevo_id",
+  "nombre": "Nuevo Producto",
+  "precio": 200,
+  "imagen": "url_imagen",
+  "categoria": "Tecnologia"
+}
+````
+
+🔹 Filtrar productos por categoría
+
+```bash 
+GET /productos/categorias/:cate
+```
+
+__Headers__
+
+__usertoken__: `TOKEN_USUARIO`
+
+__Parámetros__
+
+`cate: nombre de la categoría`
+
+__Ejemplo__
+
+```bash 
+GET /productos/categorias/tecnologia 
+```
+
+__Respuesta__
+
+```bash
+[
+  {
+    "id": "prod1",
+    "nombre": "Producto 1",
+    "categoria": "Tecnologia"
+  }
+]
+````
+
+## Categorías
+
+🔹 Obtener todas las categorías
+
+`GET /categorias`
+
+__Headers__
+
+__usertoken__: `TOKEN_USUARIO`
+
+__Respuesta__
+
+```bash
+[
+  {
+    "id": "cat1",
+    "nombre": "Tecnologia"
+  }
+]
+```
+
+# Manejo de errores
+
+La API utiliza códigos HTTP estándar:
+|-|-|
+|Código|Descripción|
+|-|-|
+|200|OK|
+|201|Creado correctamente|
+|400|Error en la solicitud|
+|401|No autorizado|
+|404|No encontrado|
+|500|Error del servidor|
+
+
+__Ejemplo de error:__
+
+```bash
+{
+  "message": "Error al obtener productos.",
+  "errorMessage": "Detalle del error"
+}
+```
+
+## Ejemplo con cURL
+
+```curl
+curl -X GET http://localhost:3000/productos \
+  -H "usertoken: TU_TOKEN"
+```
+
+## Notas finales
+* Todos los endpoints (excepto `/` y `/register`) requieren autenticación.
+* Los tokens deben enviarse siempre en los headers.
+* Las categorías se normalizan automáticamente (primera letra mayúscula).
