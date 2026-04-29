@@ -191,14 +191,30 @@ app.get('/categorias', async (req, res) => {
 })
 
 app.post("/register", async (req, res) => {
-    try {
-        const { email, nickname } = req.body
-        if (!email || !nickname) {
-            return res.status(400).json({
-                message: "Revisa los datos obligatorios (email, nickname)."
-            })
-        }
+    const { email, nickname } = req.body
 
+    if (!email || !nickname) {
+        return res.status(400).json({
+            message: "Revisa los datos obligatorios (email, nickname)."
+        })
+    }
+
+    try {
+
+        const usersRef = db.collection('users')
+        const snapshot = await usersRef
+            .where(
+                admin.firestore.Filter.or(
+                    admin.firestore.Filter.where('email', '==', email),
+                    admin.firestore.Filter.where('nickname', '==', nickname)
+                )
+            )
+            .get()
+        
+        if (!snapshot.empty) {
+            return res.status(400).json({ message: "Revisa el usuario o email por favor." })
+        }
+        
         const tokenId = AuthManager.createToken()
         const newUser = { email, nickname, tokenId }
         const docRef = await addDoc(collection(db, "users"), newUser)
@@ -210,7 +226,7 @@ app.post("/register", async (req, res) => {
 
     } catch (error) {
         return res.status(500).json({
-            message: "Error al crear un nuevo usuario.",
+            message: "Error al crear el nuevo usuario.",
             error: error.message
         })
     }
