@@ -3,6 +3,8 @@
 Les damos la documentación de la API REST de TECLAB.
 Esta API permite gestionar usuarios, productos y categorías utilizando autenticación basada en tokens.
 
+---
+
 ## Autenticación
 
 La API utiliza dos tipos de tokens:
@@ -29,6 +31,8 @@ Obtiene información general de la API.
   "version": "1.0.2026"
 }
 ```
+
+---
 
 ## Usuarios
 
@@ -59,6 +63,8 @@ __Respuesta__
 }
 ```
 
+---
+
 ### Listar todos los usuarios (Admin)
 
 ```bash 
@@ -80,6 +86,8 @@ __Respuesta__
   }
 ]
 ```
+
+---
 
 ## Productos
 
@@ -107,6 +115,8 @@ __Respuesta__
 ]
 ````
 
+---
+
 ### Obtener producto por ID
 
 ```bash 
@@ -132,6 +142,8 @@ __Respuesta__
   "imagen": "url_imagen"
 }
 ````
+
+---
 
 ### Crear producto
 
@@ -166,6 +178,8 @@ __Respuesta__
 }
 ````
 
+---
+
 ### Filtrar productos por categoría
 
 ```bash 
@@ -198,6 +212,8 @@ __Respuesta__
 ]
 ````
 
+---
+
 ## Categorías
 
 ### Obtener todas las categorías
@@ -218,6 +234,8 @@ __Respuesta__
   }
 ]
 ```
+
+---
 
 # Manejo de errores
 
@@ -243,12 +261,16 @@ __Ejemplo de error:__
 }
 ```
 
+---
+
 ## Ejemplo con cURL
 
 ```curl
 curl -X GET http://localhost:3000/productos \
   -H "usertoken: TU_TOKEN"
 ```
+
+---
 
 ## Notas finales
 * Todos los endpoints (excepto `/` y `/register`) requieren autenticación.
