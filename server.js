@@ -1,7 +1,7 @@
 import { AuthManager } from "./src/AuthManager.Class.js"
 import { db } from "./src/firebase.js"
 import { collection, getDocs, addDoc, writeBatch,
-         getDoc, doc, query, where } from "firebase/firestore"
+         getDoc, doc, query, where, or } from "firebase/firestore"
  
 import express, { json } from 'express'
 
