@@ -32,7 +32,7 @@ Obtiene información general de la API.
 
 ## Usuarios
 
-🔹 Registrar usuario
+### Registrar usuario
 
 ```bash 
 POST /register
@@ -59,7 +59,7 @@ __Respuesta__
 }
 ```
 
-🔹 Listar todos los usuarios (Admin)
+### Listar todos los usuarios (Admin)
 
 ```bash 
 POST /list-all-users
@@ -82,7 +82,8 @@ __Respuesta__
 ```
 
 ## Productos
-🔹 Obtener todos los productos
+
+### Obtener todos los productos
 
 ```bash 
 GET /productos
@@ -106,7 +107,7 @@ __Respuesta__
 ]
 ````
 
-🔹 Obtener producto por ID
+### Obtener producto por ID
 
 ```bash 
 GET /productos/:id
@@ -132,7 +133,7 @@ __Respuesta__
 }
 ````
 
-🔹 Crear producto
+### Crear producto
 
 ```bash 
 POST /productos
@@ -165,7 +166,7 @@ __Respuesta__
 }
 ````
 
-🔹 Filtrar productos por categoría
+### Filtrar productos por categoría
 
 ```bash 
 GET /productos/categorias/:cate
@@ -199,7 +200,7 @@ __Respuesta__
 
 ## Categorías
 
-🔹 Obtener todas las categorías
+### Obtener todas las categorías
 
 `GET /categorias`
 
