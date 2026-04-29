@@ -201,18 +201,21 @@ app.post("/register", async (req, res) => {
 
     try {
 
-        const usersRef = db.collection('users')
-        const snapshot = await usersRef
-            .where(
-                admin.firestore.Filter.or(
-                    admin.firestore.Filter.where('email', '==', email),
-                    admin.firestore.Filter.where('nickname', '==', nickname)
-                )
+        const usersRef = collection(db, "users")
+        const q = query(
+            usersRef,
+            or(
+                where("email", "==", email),
+                where("nickname", "==", nickname)
             )
-            .get()
+        )
+
+        const snapshot = await getDocs(q)
         
         if (!snapshot.empty) {
-            return res.status(400).json({ message: "Revisa el usuario o email por favor." })
+            return res.status(400).json({ 
+                message: "Por favor, revisa el usuario o email." 
+            })
         }
         
         const tokenId = AuthManager.createToken()
