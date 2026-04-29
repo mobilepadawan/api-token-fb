@@ -45,7 +45,7 @@ POST /register
 Crea un nuevo usuario y genera un token.
 
 __Body__
-```bash
+```json
 {
   "email": "usuario@email.com",
   "nickname": "usuario123"
@@ -54,7 +54,7 @@ __Body__
 
 __Respuesta__
 
-```bash
+```json
 {
   "id": "abc123",
   "email": "usuario@email.com",
@@ -77,7 +77,7 @@ __admintoken__: `TOKEN_ADMIN`
 
 __Respuesta__
 
-```bash
+```json
 [
   {
     "id": "abc123",
@@ -103,7 +103,7 @@ __Headers__
 __usertoken__: `TOKEN_USUARIO`
 
 __Respuesta__
-```bash
+```json
 [
   {
     "id": "prod1",
@@ -133,7 +133,7 @@ __Parámetros__
 
 __Respuesta__
 
-```bash
+```json
 {
   "id": "prod1",
   "nombre": "Producto 1",
@@ -157,7 +157,7 @@ __usertoken__: `TOKEN_USUARIO`
 
 __Body__
 
-```bash
+```json
 {
   "nombre": "Nuevo Producto",
   "precio": 200,
@@ -168,7 +168,7 @@ __Body__
 
 __Respuesta__
 
-```bash
+```json
 {
   "id": "nuevo_id",
   "nombre": "Nuevo Producto",
@@ -202,7 +202,7 @@ GET /productos/categorias/tecnologia
 
 __Respuesta__
 
-```bash
+```json
 [
   {
     "id": "prod1",
@@ -226,7 +226,7 @@ __usertoken__: `TOKEN_USUARIO`
 
 __Respuesta__
 
-```bash
+```json
 [
   {
     "id": "cat1",
@@ -254,7 +254,7 @@ La API utiliza códigos HTTP estándar:
 
 __Ejemplo de error:__
 
-```bash
+```json
 {
   "message": "Error al obtener productos.",
   "errorMessage": "Detalle del error"
