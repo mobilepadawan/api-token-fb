@@ -194,7 +194,7 @@ app.post("/register", async (req, res) => {
     const { email, nickname } = req.body
 
     if (!email || !nickname) {
-        return res.status(400).json({
+        return res.status(409).json({
             message: "Revisa los datos obligatorios (email, nickname)."
         })
     }
@@ -224,7 +224,8 @@ app.post("/register", async (req, res) => {
 
         return res.status(201).json({
             id: docRef.id,
-            ...newUser
+            ...newUser,
+            atention: "⚠️ guarda el tokenId antes de salir de aquí. No volverás a verlo."
         })
 
     } catch (error) {
