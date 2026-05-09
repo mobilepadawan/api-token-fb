@@ -194,7 +194,7 @@ app.post("/register", async (req, res) => {
     const { email, nickname } = req.body
 
     if (!email || !nickname) {
-        return res.status(409).json({
+        return res.status(400).json({
             message: "Revisa los datos obligatorios (email, nickname)."
         })
     }
@@ -213,7 +213,7 @@ app.post("/register", async (req, res) => {
         const snapshot = await getDocs(q)
         
         if (!snapshot.empty) {
-            return res.status(400).json({ 
+            return res.status(409).json({ 
                 message: "Por favor, revisa el usuario o email." 
             })
         }
