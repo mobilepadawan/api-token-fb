@@ -1,22 +1,26 @@
 {
-  "name": "api-token",
-  "version": "1.0.0",
-  "description": "Ejemplo funcional de API KEY y tokens",
-  "main": "server.js",
+  "name": "backend-ecommerce",
+  "version": "1.0.2026",
+  "description": "Aplicación de backend para productos",
+  "main": "index.js",
   "scripts": {
-    "test": "node --watch --env-file=.env server.js",
-    "start": "node server.js"
+    "test": "node --env-file=.env --watch index.js",
+    "prod": "node --evn-file=.env index.js"
   },
   "keywords": [
-    "Express",
-    "Node.js",
-    "Token"
+    "app",
+    "backend",
+    "nodejs",
+    "express",
+    "mongodb",
+    "Educación IT"
   ],
-  "author": "Fernando Luna for TECLAB INSTITUTE",
-  "license": "MIT",
+  "author": "Fernando Luna para Educación IT.",
+  "license": "ISC",
   "type": "module",
   "dependencies": {
-    "express": "^4.18.2",
-    "firebase": "^12.12.1"
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mongodb": "^7.3.0"
   }
 }
